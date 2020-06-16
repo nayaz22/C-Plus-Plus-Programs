@@ -1,0 +1,65 @@
+#include<iostream>
+using namespace std;
+class emp
+{
+int empno;
+char empname[30];
+public:
+void get()
+{
+cout<<"Enter the Employee Number: \n";
+cin>>empno;
+cout<<"Enter the Employee Name: \n";
+cin>>empname;
+}
+void show()
+{
+cout<<"\tEmployee Number is:"<<empno;
+cout<<"\tEmployee Name is:"<<empname;
+}
+};
+class salary:public emp
+{
+int esalary;
+char eexp[30];
+public:
+void get()
+{
+cout<<"Enter the Employee Salary:";
+cin>>esalary;
+cout<<"Enter the Employee Experience :";
+cin>>eexp;
+}
+void show()
+{
+cout<<"\tSalary is:\t"<<esalary;
+cout<<"\tExperience is :\t"<<eexp;
+}
+};
+class result:public salary
+{
+public:
+void disp()
+{
+emp::get();
+salary::get();
+emp::show();
+salary::show();
+}
+};
+int main()
+{
+result r;
+r.disp();
+return 0;
+}
+
+
+/* OUTPUT
+Enter the Employee Number: 
+7323
+Enter the Employee Name: 
+nay 
+Enter the Employee Salary:20000
+Enter the Employee Experience :1
+	Employee Number is:7323	Employee Name is:nay	Salary is:	20000	Experience is :	1 */
