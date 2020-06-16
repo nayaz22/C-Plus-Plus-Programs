@@ -1,0 +1,71 @@
+#include<iostream>
+using namespace std;
+class student
+{
+private:
+char name[50];
+int rollno;
+public:
+void getdata();
+void display();
+};
+class section:public student
+{
+private:
+int age;
+public:
+void getdata();
+void display();
+};
+void student::getdata()
+{
+cout<<"Enter the Name:\n";
+cin>>name;
+cout<<"Enter the rollno \n";
+cin>>rollno;
+}
+void student::display()
+{
+cout<<"\tName:"<<name<<endl;
+cout<<"\tRoll No:"<<rollno<<endl;
+}
+void section::getdata()
+{
+cout<<"Enter the age :\t"<<endl;
+cin>>age;
+}
+void section::display()
+{
+cout<<"\tAge is:"<<age<<endl;
+}
+int main()
+{
+section n;
+cout<<"\n\nEnter the data"<<endl;
+cout<<"---------------------------"<<endl;
+n.student::getdata();
+n.getdata();
+cout<<"\n\n\tResult for the student";
+cout<<"\n\t-------------------------"<<endl;
+n.student::display();
+n.display();
+return 0;
+}
+
+/* Output
+Enter the data
+---------------------------
+Enter the Name:
+Harry
+Enter the rollno 
+12345
+Enter the age :	
+60
+
+
+	Result for the student
+	-------------------------
+	Name:Harry
+	Roll No:12345
+	Age is:60
+*/
