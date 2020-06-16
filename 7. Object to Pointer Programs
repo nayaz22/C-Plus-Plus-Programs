@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+class myclass
+{
+int i;
+public:
+void read(int j)
+{
+i=j;
+}
+int getint()
+{
+return i;
+}
+};
+int main()
+{
+myclass ob,*objpointer;
+objpointer=&ob;
+objpointer->read(10);
+cout<<"The object pointer value is :"<<objpointer->getint()<<"\n";
+return 0;
+}
+
+/* OUTPUT
+The object pointer value is :10
+*/
