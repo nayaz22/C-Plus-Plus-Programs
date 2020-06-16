@@ -1,0 +1,56 @@
+#include<iostream>
+using namespace std;
+class complex
+{
+int a,b;
+public:
+complex()
+{
+}
+void operator++()
+{
+a=++a;
+b=++b;
+}
+void operator--()
+{
+a=--a;
+b=--b;
+}
+void getvalue()
+{
+cout<<"Enter the value of A:";
+cin>>a;
+cout<<"Enter the value of B:";
+cin>>b;
+}
+void display()
+{
+cout<<a<<"\t"<<b<<"\n";
+}
+};
+int main()
+{
+complex obj;
+obj.getvalue();
+obj.operator++();
+cout<<"Increment complex Number:\n";
+obj.display();
+obj.getvalue();
+obj.operator--();
+cout<<"Decrement complex Number:\n";
+obj.display();
+return 0;
+}
+
+
+/* Output
+Enter the value of A:10
+Enter the value of B:20
+Increment complex Number:
+11	21
+Enter the value of A:20
+Enter the value of B:23
+Decrement complex Number:
+19	22
+*/
