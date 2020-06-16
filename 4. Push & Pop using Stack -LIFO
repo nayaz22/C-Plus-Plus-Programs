@@ -1,0 +1,55 @@
+#include<iostream>
+using namespace std;
+#define SIZE 5
+class stack
+{
+private:
+int stck[SIZE];
+int tos;
+public:
+stack();
+void push(int i);
+int  pop();
+};
+stack::stack()
+{
+tos=0;
+}
+void stack::push(int i)
+{
+if(tos==SIZE)
+{
+cout<<"Stack is full \n";
+return;
+}
+stck[tos]=i;
+tos++;
+}
+int stack::pop()
+{
+if(tos==0)
+{
+cout<<"Stack is underflow \n";
+return 0;
+}
+tos--;
+return stck[tos];
+}
+int main()
+{
+stack s1,s2;
+s1.push(1);
+s2.push(2);
+s1.push(3);
+s2.push(4);
+cout<<s1.pop()<<"";
+cout<<s1.pop()<<"";
+cout<<s2.pop()<<"";
+cout<<s2.pop()<<"\n";
+return 0;
+}
+
+
+/*OUTPUT
+3142
+*/
