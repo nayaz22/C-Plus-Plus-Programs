@@ -1,0 +1,115 @@
+#include<iostream>
+using namespace std;
+class student
+{
+protected:
+int rollno;
+char name[50];
+public:
+void gname()
+{
+cout<<"Enter Roll Number:\n";
+cin>>rollno;
+cout<<"Enter Student Name:\n";
+cin>>name;
+}
+void disp()
+{
+cout<<"Name is :"<<name<<"\t";
+cout<<"Roll No:"<<rollno<<"\t";
+}
+};
+class marks:virtual public student
+{
+protected:
+int tamil,eng,mat,sci,social;
+public:
+void getsm()
+{
+cout<<"Enter Tamil Marks :\n";
+cin>>tamil;
+cout<<"Enter English Marks :\n";
+cin>>eng;
+cout<<"Enter Maths Marks :\n";
+cin>>mat;
+cout<<"Enter Science Marks :\n";
+cin>>sci;
+cout<<"Enter Social Marks :\n";
+cin>>social;
+}
+};
+class sum:virtual public marks
+{
+protected:
+int avg,tot;
+public:
+void disp()
+{
+tot=tamil+eng+mat+sci+social;
+avg=tot/5;
+cout<<"\nThe Marks of\nTamil\tEnglish\tMaths\tScience\tSocial\n";
+cout<<tamil<<"\t"<<eng<<"\t"<<mat<<"\t"<<sci<<"\t"<<social;
+}
+};
+class final:public sum
+{
+public:
+void disp()
+{
+student::gname();
+marks::getsm();
+marks::disp();
+sum::disp();
+}
+};
+class final1:public final
+{
+public:
+void disp()
+{
+marks::disp();
+sum::disp();
+}
+};
+int main()
+{
+final1 s;
+char ans;
+int i,n=0;
+do
+{
+cout<<"Enter Student"<<n+1<<"details\n";
+s.final::disp();
+cout<<"Enter Another(Y/N)?";
+cin>>ans;
+}
+while(ans!='n');
+for(int i=0;i<n;i++)
+{
+cout<<"\n Student"<<i+1<<"is";
+s.disp();
+}
+return 0;
+}
+
+
+/* OUTPUT
+Enter Student1details
+Enter Roll Number:
+7323
+Enter Student Name:
+Nay
+Enter Tamil Marks :
+52
+Enter English Marks :
+63
+Enter Maths Marks :
+52
+Enter Science Marks :
+52
+Enter Social Marks :
+42
+Name is :Nay	Roll No:7323	
+The Marks of
+Tamil	English	Maths	Science	Social
+52	63	52	52	42Enter Another(Y/N)?y */
