@@ -1,0 +1,92 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+class student
+{
+int rno;
+char name[15];
+float mark;
+public:
+student()
+{}
+void getdata();
+void showdata();
+};
+void student :: getdata()
+{
+cout<<"\n\t Enter the roll number:";
+cin>>rno;
+cin.ignore();
+cout<<"\n\t Enter name:";
+cin>>name;
+cout<<"\n\t Enter mark:";
+cin>>mark;
+}
+void student :: showdata()
+{
+cout<<"\n Roll no of the student \t"<<rno;
+cout<<"\n Name of the student \t"<<name;
+cout<<"\n Mark of the student \t"<<mark;
+}
+int main()
+{
+student S[3];
+fstream file;
+int i;
+file.open("/home/studentb/7323/c++/10/data.txt");
+cout<<"\n WRITING STUDENT INFORMATION TO THE FILE:";
+cout<<"\n ENTER THE STUDENT DETAILS TO THE FILE:";
+for(i=0;i<3;i++)
+{
+S[i].getdata();
+file.write((char*)&S[i],sizeof (S[i]));
+}
+file.close();
+file.open("/home/studentb/7323/c++/10/data.txt");
+cout<<"READING STUDENT INFORMATION TO THE FILE:";
+cout<<"\n\n\n Student Database Loading..........";
+cout<<"\n\t .....................";
+for(i=0;i<3;i++)
+{
+file.read((char*)&S[i],sizeof (S[i]));
+S[i].showdata();
+}
+file.close();
+return 0;
+}
+
+/* 	OUTPUT
+ WRITING STUDENT INFORMATION TO THE FILE:
+ ENTER THE STUDENT DETAILS TO THE FILE:
+	 Enter the roll number:01
+
+	 Enter name:suhair
+
+	 Enter mark:95
+
+	 Enter the roll number:02
+
+	 Enter name:sabeel
+
+	 Enter mark:95
+
+	 Enter the roll number:03
+
+	 Enter name:nayaz
+
+	 Enter mark:65 
+READING STUDENT INFORMATION TO THE FILE:
+
+
+ Student Database Loading..........
+	 .....................
+ Roll no of the student 	1
+ Name of the student 	suhair
+ Mark of the student 	95
+ Roll no of the student 	2
+ Name of the student 	sabeel
+ Mark of the student 	95
+ Roll no of the student 	3
+ Name of the student 	nayaz
+ Mark of the student 	65
+*/
