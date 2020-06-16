@@ -1,0 +1,54 @@
+#include<iostream>
+using namespace std;
+class over
+{
+public:
+int get(int,int,int);
+float get(float,float,float);
+};
+int over::get(int a,int b,int c)
+{
+if(a>b&&a>c)
+return a;
+else
+if(b>c && b>a)
+return b;
+else
+return c;
+}
+float over::get(float a,float b,float c)
+{
+if(a>b&&a>c)
+return b;
+else
+if(b>a&&b>c)
+return b;
+else
+return c;
+}
+int main()
+{
+int m,n,o;
+float x,y,z;
+over obj;
+cout<<"\nEnter the three Integer Number:";
+cin>>m>>n>>o;
+int t=obj.get(m,n,o);
+cout<<"Maximum Number is="<<t;
+cout<<"\nEnter the three float number:";
+cin>>x>>y>>z;
+float tmp=obj.get(x,y,z);
+cout<<"Muximum number is:"<<tmp;
+return 0;
+}
+
+/* OUTPUT
+Enter the three Integer Number:20
+54
+10
+Maximum Number is=54
+Enter the three float number:10.2
+30.5
+10.2
+Muximum number is:30.5
+*/
