@@ -1,0 +1,62 @@
+#include<iostream>
+using namespace std;
+class array
+{
+private:
+int feet;
+float inch;
+public:
+void getdistance();
+void showdistance();
+};
+void array::getdistance()
+{
+cout<<"\t\nEnter Feet:";
+cin>>feet;
+cout<<"\t\nEnter Inch:";
+cin>>inch;
+}
+void array::showdistance()
+{
+cout<<"\t\nTotal Distance is:\n"<<feet<<""<<" "<<inch<<"";
+}
+int main()
+{
+array obj[25];
+char ans;
+int n=0;
+do
+{
+cout<<"\nEnter distance number="<<n+1;
+obj[n++].getdistance();
+cout<<"\nEnter another(y/n!)";
+cin>>ans;
+}
+while(ans!='n');
+for(int i=0;i<n;i++)
+{
+cout<<"Distance Number="<<i+i;
+obj[i].showdistance();
+}
+return 0;
+}
+
+/* OUTPUT
+Enter distance number=1	
+Enter Feet:10
+	
+Enter Inch:12
+
+Enter another(y/n!)y
+
+Enter distance number=2	
+Enter Feet:12
+	
+Enter Inch:10
+
+Enter another(y/n!)n
+Distance Number=0	
+Total Distance is:10 12
+Distance Number=1	
+Total Distance is:12 10
+*/
