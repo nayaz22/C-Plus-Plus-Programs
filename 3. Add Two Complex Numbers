@@ -1,0 +1,44 @@
+#include<iostream>
+using namespace std;
+class complex
+{
+int real,imag;
+public:
+void s()
+{
+cout<<"Enter real:";
+cin>>real;
+cout<<"Enter imaginary:";
+cin>>imag;
+}
+friend complex operator+(complex t1,complex t2);
+void display()
+{
+cout<<real<<"+i"<<imag<<"\n";
+}
+};
+complex operator+(complex t1,complex t2)
+{
+complex temp;
+temp.real=t1.real+t2.real;
+temp.imag=t1.imag+t2.imag;
+return(temp);
+}
+int main()
+{
+complex t1,t2;
+t1.s();
+t2.s();
+t1=t1+t2;
+cout<<"The sum of complex number is:";
+t1.display();
+return 0;
+}
+
+/*OUTPUT
+Enter real:12
+Enter imaginary:10
+Enter real:12
+Enter imaginary:10
+The sum of complex number is:24+i20
+*/
