@@ -1,0 +1,52 @@
+#include<iostream>
+using namespace std;
+class employee
+{
+int empn;
+char empname[25];
+float empsalary;
+public:
+void get_details();
+void show_emp_details();
+};
+void employee::get_details()
+{
+cout<<"\n ENTER THE EMPLOYEE NUMBER:\n";
+cin>>empn;
+cout<<"\n ENTER THE EMPLOYEE NAME:\n";
+cin>>empname;cout<<"\n ENTER THE EMPLOYEE SALARY:\n";
+cin>>empsalary;
+}
+void employee::show_emp_details()
+{
+cout<<"\n\t DETAILS OF    : "<<empname;
+cout<<"\n\t ~~~~~~~~~~~~~~~~~~~~~~~\n\n";
+cout<<"\n\t EMPLOYEE NAME   :"<<empname;
+cout<<"\n\t EMPLOYEE NUMBER :"<<empn;
+cout<<"\n\t EMPLOYEE SALARY :"<<empsalary;
+}
+int main()
+{
+employee s;
+s.get_details();
+s.show_emp_details();
+}
+
+/*OUTPUT
+ ENTER THE EMPLOYEE NUMBER:
+1
+
+ ENTER THE EMPLOYEE NAME:
+sabeel
+
+ ENTER THE EMPLOYEE SALARY:
+20000
+
+	 DETAILS OF    : sabeel
+	 ~~~~~~~~~~~~~~~~~~~~~~~
+
+
+	 EMPLOYEE NAME   :sabeel
+	 EMPLOYEE NUMBER :1
+	 EMPLOYEE SALARY :20000
+*/
