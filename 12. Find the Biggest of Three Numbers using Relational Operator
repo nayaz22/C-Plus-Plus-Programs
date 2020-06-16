@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+int a,b,c;
+cout<<"Enter the three numbers:";
+cin>>a>>b>>c;
+if(a>b)
+cout<<"\n"<<"A is Greater than B";
+if(a<b)
+cout<<"\n"<<"A is Less than B";
+if(a>=c)
+cout<<"\n"<<"A is greater than or equal to c";
+if(a<=c)
+cout<<"\n"<<"A Less then or equal to C";
+return 0;
+}
