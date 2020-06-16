@@ -1,0 +1,35 @@
+#include<iostream>
+using namespace std;
+class sample
+{
+int a,b,c;
+public:
+void get()
+{
+cout<<"\nEnter three Numbers\n";
+cin>>a>>b>>c;
+}
+friend float average(sample obj);
+};
+float average(sample obj)
+{
+float avg;
+avg=(obj.a+obj.b+obj.c)/3.0;
+return (avg);
+}
+int main()
+{
+sample obj;
+obj.get();
+float avg=average(obj);
+cout<<"Average="<<avg;
+return 0;
+}
+
+/*OUTPUT
+Enter three Numbers
+5 
+2
+6
+Average=4.33333
+*/
