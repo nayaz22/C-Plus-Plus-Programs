@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+int c;
+c=max(20,50);
+cout<<c<<endl;
+return 0;
+}
+inline int max(int a,int b)
+{
+return(a>b)?a:b;
+}
+
+/* OUTPUT
+    50
+*/
