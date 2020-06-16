@@ -1,0 +1,32 @@
+#include<iostream>
+#include<iomanip>
+using namespace std;
+ostream &n(ostream &o)
+{
+o<<"negative number";
+return o;
+}
+ostream &p(ostream &o)
+{
+o<<"positive Number";
+return o;
+}
+int main()
+{
+int x;
+cout<<"\nEnter a number:";
+cin>>x;
+if(x<0)
+cout<<x<<" is "<<n;
+else
+cout<<x<<" is "<<p;
+return 0;
+}
+
+/* OUTPUT
+Enter a number:25
+25 is positive
+
+Enter a number:-20
+-20 is negative number
+*/
