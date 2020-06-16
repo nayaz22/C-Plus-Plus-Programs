@@ -1,0 +1,35 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+void calculate()
+{
+fstream tfile;
+tfile.open("/home/studentb/7323/c++/ab.txt");
+char arr[80];
+char ch;
+int i=0 ,sum=0 ,n=0;
+while(tfile)
+{
+tfile.get(ch);
+arr[i]=ch;
+i++;
+if(ch=='a'||ch=='A'||ch=='e'||ch=='E'||ch=='i'||ch=='I'||ch=='o'||ch=='O'||ch=='u'||ch=='U')
+{
+i--;
+sum=sum+i;
+i=0;
+n++;
+}
+}
+cout<<"Total no. of vowels:"<<n;
+}
+int main()
+{
+calculate();
+return 0;
+}
+
+
+/* OUTPUT
+Total no. of vowels:5
+*/
