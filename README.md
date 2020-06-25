@@ -4,5 +4,5 @@ Welcome Back Coders, This C++ Programs will help you to utilize your Coding skil
 
 * Create Your Github Account
 * Follow my Github Account Link: https://github.com/nayaz22
-* Let me know in the Comment Session if you have any doubt in the following Programs and for the upcoming Programs do Follow me and give your loveable FeedBack So that i can improve myself.
+* Let me know in the Comment Section if you have any doubt in the following Programs and for the upcoming Programs do Follow me and give your loveable FeedBack So that i can improve myself.
 * For Compilation its better if you have a Terminal, else you can use online compilation Link: https://www.tutorialspoint.com/compile_cpp_online.php
